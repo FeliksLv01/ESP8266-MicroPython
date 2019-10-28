@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="CN">
+
+<head>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html">
+    <title>LED控制</title>
+    <style>
+        .button {
+            position: absolute;
+            top: 45%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            -moz-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            -o-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 32px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body background="https://ly-object-1259106193.cos.ap-chengdu.myqcloud.com/1571795896926.jpg" style="background-repeat:no-repeat;background-size:100%100%;background-attachment:fixed">
+    <form>
+        <span id=" status " style="color:white " style="text-align: center " name="status "></span>
+        <input type="button " class="button " value="转换 " onclick="onSubmit() ">
+        </from>
+</body>
+
+</html>
+<script>
+    function onSubmit() {
+        if (window.XMLHttpRequest) {
+            // 用于现代浏览器的代码,code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp = new XMLHttpRequest();
+        } else {
+            // 应对老版本 IE 浏览器的代码,// code for IE6, IE5
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP ");
+        }
+
+        xmlhttp.onreadystatechange = function() {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                document.getElementById("status ").innerHTML = xmlhttp.responseText;
+                // document.getElementById("status ").value = xmlhttp.responseText;
+            }
+        }
+        xmlhttp.open("GET ", "led ", true);
+        xmlhttp.send("ssss ");
+    }
+</script>

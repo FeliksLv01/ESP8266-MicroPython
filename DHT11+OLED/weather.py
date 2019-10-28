@@ -11,6 +11,7 @@ oled = SSD1306_I2C(OLED_WIDTH, OLED_HEIGHT, i2c)
 
 sensor = DHT11(Pin(14))
 
+
 def show_weather():
     t, h = sensor_read()
     oled.fill(0)
@@ -18,11 +19,13 @@ def show_weather():
     oled.text("Humidity:    %d%%" % h, 0, 20)
     oled.show()
 
+
 def sensor_read():
     sensor.measure()
     t = sensor.temperature()
     h = sensor.humidity()
     return t, h
+
 
 def showdata(sec=10):
     intervals = int(OLED_WIDTH / 16 + 1)
@@ -36,4 +39,3 @@ def showdata(sec=10):
             if (x + 1) % 16 == 0:
                 oled.show()
                 sleep_ms(ms)
-
