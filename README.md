@@ -1,6 +1,6 @@
 # ESP8266-MicroPython
-## 本人在学习用MicroPython写ESP8266代码过程中的一些小工程
-![esp8266](https://ly-object-1259106193.cos.ap-chengdu.myqcloud.com/blog/nodemcu_pins.png)
+## 使用MicroPython控制ESP8266
+![ESP8266](https://ftp.bmp.ovh/imgs/2019/12/b2c892de080ce21b.png)
 
 ## 入门推荐
 1. [教程 in Github](https://github.com/lvidarte/esp8266/wiki)
