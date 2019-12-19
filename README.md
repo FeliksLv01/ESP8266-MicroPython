@@ -1,5 +1,5 @@
 # ESP8266-MicroPython
-## 使用MicroPython控制ESP8266
+## 使用MicroPython开发ESP8266
 ![ESP8266](https://ftp.bmp.ovh/imgs/2019/12/b2c892de080ce21b.png)
 
 ## 入门推荐
