@@ -7,7 +7,7 @@ def do_connect():
     if not sta_if.isconnected():
         print('connecting to network...')
     sta_if.active(True)
-    sta_if.connect('TP-LINK_48D3', '15950244008')  # wifi的SSID和密码
+    sta_if.connect('wifi名', '密码')  # wifi的SSID和密码
     while not sta_if.isconnected():
         pass
     print('network config:', sta_if.ifconfig())
