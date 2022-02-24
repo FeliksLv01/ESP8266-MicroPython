@@ -1,24 +1,17 @@
-import time
+from machine import Pin, I2C
 from ssd1306 import SSD1306_I2C
-import weather
-
-oled.fill(0)
-oled.show()
-
-
-oled.text('Hello', 0, 0)
-oled.text('World', 50, 0)
-oled.text('kcqnly',80,50)
-oled.show()
-time.sleep(2)
-oled.fill(1)
-oled.show()
-time.sleep(1)
-oled.fill(0)
-oled.show()
-oled.text('waiting...',0,0)
-oled.show()
-time.sleep(2)
-
-
-weather.showdata()
+from dht import DHT11
+i2c = I2C(scl=Pin(14), sda=Pin(2))
+oled = SSD1306_I2C(128, 64, i2c)
+sensor = DHT11(Pin(5))
+while True:
+    try:
+        sensor.measure()
+        t = sensor.temperature()
+        h = sensor.humidity()
+        oled.fill(0)
+        oled.text("T:{}".format(t), 0, 0)
+        oled.text("H:{}".format(h), 0, 20)
+        oled.show()
+    except:
+        continue
